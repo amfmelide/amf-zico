@@ -42,17 +42,9 @@
   /* TOPBAR */
   .topbar{
     position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;
-    padding:14px 28px;border-bottom:1px solid var(--line);font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+    padding:18px 28px;border-bottom:1px solid var(--line);font-size:12px;letter-spacing:.18em;text-transform:uppercase;
   }
-  .topbar .brand{display:flex;align-items:center;gap:14px}
-  .topbar .brand img{
-    height:42px;width:auto;display:block;
-    filter:invert(1) brightness(1.1);
-  }
-  .topbar .brand-tag{
-    font-family:'Anton',sans-serif;letter-spacing:.15em;font-size:11px;color:var(--accent);
-    padding-left:14px;border-left:1px solid var(--line);
-  }
+  .topbar .brand{font-family:'Anton',sans-serif;letter-spacing:.05em;font-size:18px;color:var(--accent)}
   .pulse{display:inline-flex;align-items:center;gap:8px;color:var(--ink-dim)}
   .dot{width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 1.4s infinite}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
@@ -322,7 +314,23 @@
   .info-strip p{font-size:14px;color:var(--ink-dim);line-height:1.5}
 
   /* FOOTER */
-  footer{padding:40px 28px;text-align:center;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-dim);position:relative;z-index:2}
+  footer{
+    position:relative;z-index:2;padding:60px 28px 50px;text-align:center;
+    background:linear-gradient(180deg,transparent,rgba(31,217,98,.03));
+  }
+  .footer-logo{
+    height:80px;width:auto;max-width:60%;
+    margin:0 auto 28px;display:block;
+    filter:invert(1) brightness(1.1);opacity:.92;
+  }
+  .footer-divider{
+    width:60px;height:1px;background:var(--line);margin:0 auto 24px;
+  }
+  .footer-text{
+    font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim);line-height:1.8;
+  }
+  .footer-text .accent{color:var(--accent)}
+  .footer-text .small{opacity:.6;font-size:11px;letter-spacing:.15em}
 
   /* MODAL */
   .modal{
@@ -346,9 +354,7 @@
 
 <!-- TOPBAR -->
 <div class="topbar">
-  <span class="brand">
-    <img src="amf-logo.png" alt="AMF · Asociación Melide Futbolín">
-  </span>
+  <span class="brand">AMF · MELIDE</span>
   <span class="pulse"><span class="dot"></span>Preorder abierto</span>
 </div>
 
@@ -516,8 +522,13 @@
 </section>
 
 <footer>
-  © 2026 · AMF · Asociación Melide Futbolín · Máster de Melide vol.4<br>
-  <span style="opacity:.6">Patrocinado por A Barbería de Iago</span>
+  <img src="amf-logo.png" alt="AMF · Asociación Melide Futbolín" class="footer-logo">
+  <div class="footer-divider"></div>
+  <div class="footer-text">
+    <span class="accent">Máster de Melide · Vol. 4</span><br>
+    Asociación Melide Futbolín<br>
+    <span class="small">Patrocinado por A Barbería de Iago · © 2026</span>
+  </div>
 </footer>
 
 <!-- MODAL ÉXITO -->
