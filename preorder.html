@@ -42,9 +42,17 @@
   /* TOPBAR */
   .topbar{
     position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;
-    padding:18px 28px;border-bottom:1px solid var(--line);font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+    padding:14px 28px;border-bottom:1px solid var(--line);font-size:12px;letter-spacing:.18em;text-transform:uppercase;
   }
-  .topbar .brand{font-family:'Anton',sans-serif;letter-spacing:.05em;font-size:18px;color:var(--accent)}
+  .topbar .brand{display:flex;align-items:center;gap:14px}
+  .topbar .brand img{
+    height:42px;width:auto;display:block;
+    filter:invert(1) brightness(1.1);
+  }
+  .topbar .brand-tag{
+    font-family:'Anton',sans-serif;letter-spacing:.15em;font-size:11px;color:var(--accent);
+    padding-left:14px;border-left:1px solid var(--line);
+  }
   .pulse{display:inline-flex;align-items:center;gap:8px;color:var(--ink-dim)}
   .dot{width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 1.4s infinite}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
@@ -127,7 +135,7 @@
   .sponsor-eyebrow{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:24px}
   .sponsor-logo{
     max-width:280px;width:80%;height:auto;
-    background:var(--ink);padding:24px 32px;
+    background:#ffffff;padding:24px 32px;
     transition:transform .3s ease;
   }
   .sponsor-logo:hover{transform:scale(1.02)}
@@ -181,7 +189,7 @@
   }
   .slogan-m-logo{
     height:clamp(140px,20vw,240px);width:auto;
-    background:var(--ink);padding:14px 24px;
+    background:#ffffff;padding:14px 24px;
     filter:drop-shadow(0 8px 24px rgba(31,217,98,.25));
   }
   .slogan-x{
@@ -190,7 +198,7 @@
   }
   .slogan-barberia{
     max-width:240px;width:30vw;min-width:160px;height:auto;
-    background:var(--ink);padding:14px 20px;
+    background:#ffffff;padding:14px 20px;
   }
   .slogan-caption{
     margin-top:32px;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-dim);
@@ -338,7 +346,9 @@
 
 <!-- TOPBAR -->
 <div class="topbar">
-  <span class="brand">AMF · MELIDE</span>
+  <span class="brand">
+    <img src="amf-logo.png" alt="AMF · Asociación Melide Futbolín">
+  </span>
   <span class="pulse"><span class="dot"></span>Preorder abierto</span>
 </div>
 
@@ -426,7 +436,6 @@
     <div class="label">Hecho en Melide</div>
     <h2>Desde el <em>corazón</em><br>del Camino</h2>
     <p>El Máster nace en Melide, parada esencial del Camino de Santiago. Esta camiseta celebra la cuarta edición de un evento que ya es tradición.</p>
-    <div class="melide-coords">42°54′N · 8°00′W</div>
   </div>
 </section>
 
@@ -480,6 +489,7 @@
           <button type="button" class="size-btn" data-size="L">L</button>
           <button type="button" class="size-btn" data-size="XL">XL</button>
           <button type="button" class="size-btn" data-size="XXL">XXL</button>
+          <button type="button" class="size-btn" data-size="XXXL">XXXL</button>
         </div>
         <input type="hidden" name="talla" id="tallaInput" required>
       </div>
@@ -496,7 +506,7 @@
 
       <div class="total-row">
         <span class="label">Total estimado</span>
-        <span class="total" id="totalDisplay">25€</span>
+        <span class="total" id="totalDisplay">35€</span>
       </div>
 
       <button type="submit" class="submit">Reservar ahora →</button>
