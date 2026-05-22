@@ -785,7 +785,7 @@
         </label>
       </div>
 
-      <p class="small">Al reservar recibirás un email de confirmación. La camiseta se entrega el <strong>18 de septiembre en el Máster de Melide</strong>.</p>
+      <p class="small">Recibirás una referencia de reserva en pantalla. La camiseta se entrega y se paga el <strong>18 de septiembre en el Máster de Melide</strong>.</p>
     </form>
   </div>
 </section>
@@ -824,9 +824,9 @@
 <div class="modal" id="successModal">
   <div class="modal-content">
     <h2>¡Reserva recibida!</h2>
-    <div style="font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:6px">Tu número de pedido</div>
-    <div class="order-num" id="orderNumber">#000</div>
-    <p>En breve recibirás un email de confirmación. Te esperamos el <strong style="color:var(--accent)">18 de septiembre</strong> en el Máster de Melide para entregarte tu camiseta.</p>
+    <div style="font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:6px">Tu referencia de reserva</div>
+    <div class="order-num" id="orderNumber">AMF-00000</div>
+    <p>Apunta tu referencia. Te esperamos el <strong style="color:var(--accent)">18 de septiembre</strong> en el Máster de Melide para entregarte tu camiseta y completar el pago.</p>
     <button onclick="closeModal()">Cerrar</button>
   </div>
 </div>
@@ -947,11 +947,14 @@
     };
 
     try {
-      const { data: inserted, error } = await sb.from('pedidos_camisetas').insert(pedido).select();
+      // Insertamos sin .select() porque RLS no permite leer (por seguridad).
+      // El número de pedido se genera localmente como referencia para el cliente.
+      const { error } = await sb.from('pedidos_camisetas').insert(pedido);
 
       if(!error){
-        const id = inserted && inserted[0] ? inserted[0].id : '—';
-        document.getElementById('orderNumber').textContent = '#' + String(id).padStart(3, '0');
+        // Referencia de pedido basada en fecha+azar (solo informativa para el cliente)
+        const ref = 'AMF-' + Date.now().toString().slice(-5);
+        document.getElementById('orderNumber').textContent = ref;
         document.getElementById('successModal').classList.add('show');
         e.target.reset();
         qty=1;
