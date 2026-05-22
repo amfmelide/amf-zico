@@ -3,17 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PREORDER · Camiseta Máster de Melide vol.4</title>
-<meta name="description" content="Camiseta oficial del Máster de Melide vol.4. Edición limitada. AMF · Asociación Melide Futbolín.">
+<title>Camiseta Máster de Melide vol.4 · Reserva oficial · AMF</title>
+<meta name="description" content="Reserva la camiseta oficial del Máster de Melide vol.4. Polo oversize Zico, edición limitada. AMF × A Barbería de Iago. Entrega 18 sep 2026.">
+<meta name="author" content="AMF · Asociación Melide Futbolín">
+<meta name="theme-color" content="#0a0f0a">
+<meta name="robots" content="index, follow">
 
-<!-- Open Graph para compartir en WhatsApp/Instagram -->
-<meta property="og:title" content="Camiseta Máster de Melide vol.4 · Preorder">
-<meta property="og:description" content="Edición limitada. Reserva la tuya antes del evento.">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://amfmelide.github.io/amf-zico/">
+<meta property="og:title" content="Camiseta Máster de Melide vol.4 · Reserva oficial">
+<meta property="og:description" content="Polo oversize Zico, edición limitada. AMF × A Barbería de Iago. Reserva tu talla antes del 18 sep.">
+<meta property="og:image" content="https://amfmelide.github.io/amf-zico/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="AMF Melide">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Camiseta Máster de Melide vol.4">
+<meta name="twitter:description" content="Reserva la camiseta oficial. Polo Zico, edición limitada. Entrega 18 sep.">
+<meta name="twitter:image" content="https://amfmelide.github.io/amf-zico/og-image.jpg">
 
 <!-- Favicons -->
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png?v=2">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2">
 <meta property="og:type" content="website">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -665,7 +681,7 @@
 
 <!-- MELIDE ATMOSPHERIC -->
 <section class="melide">
-  <img src="melide-puente-2.jpeg" alt="Puente medieval de Furelos, Melide" class="melide-img">
+  <img src="melide-puente-2.jpeg" alt="Puente medieval de Furelos, Melide" class="melide-img" loading="lazy" decoding="async">
   <div class="melide-overlay">
     <div class="label">Hecho en Melide</div>
     <h2>Desde el <em>corazón</em><br>del Camino</h2>
@@ -676,18 +692,18 @@
 <!-- PATROCINADOR -->
 <section class="sponsor">
   <div class="sponsor-eyebrow">Con el patrocinio oficial de</div>
-  <img src="barberia-logo.jpeg" alt="A Barbería de Iago" class="sponsor-logo">
+  <img src="barberia-logo.jpeg" alt="A Barbería de Iago" class="sponsor-logo" loading="lazy" decoding="async">
   <div class="sponsor-meta">El estilo del Máster, desde Melide.</div>
 </section>
 
 <!-- GALERÍA EDICIÓN ANTERIOR -->
 <section class="gallery">
   <div class="gallery-item">
-    <img src="camiseta-frente.jpeg" alt="Camiseta frente - edición 2025">
+    <img src="camiseta-frente.jpeg" alt="Camiseta frente - edición 2025" loading="lazy" decoding="async">
     <span>Frente · 2025</span>
   </div>
   <div class="gallery-item">
-    <img src="camiseta-trasera.jpeg" alt="Camiseta trasera - edición 2025">
+    <img src="camiseta-trasera.jpeg" alt="Camiseta trasera - edición 2025" loading="lazy" decoding="async">
     <span>Trasera · 2025</span>
   </div>
 </section>
@@ -705,17 +721,29 @@
     <form id="preorderForm">
       <div>
         <label>Nombre completo</label>
-        <input type="text" name="nombre" required placeholder="Tu nombre">
+        <input type="text" name="nombre" required placeholder="Tu nombre"
+               autocomplete="name" minlength="2" maxlength="80">
       </div>
 
       <div>
         <label>Email</label>
-        <input type="email" name="email" required placeholder="tu@email.com">
+        <input type="email" name="email" required placeholder="tu@email.com"
+               pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+               autocomplete="email"
+               title="Introduce un email válido">
       </div>
 
       <div>
         <label>Teléfono (WhatsApp)</label>
-        <input type="tel" name="telefono" placeholder="+34 ...">
+        <input type="tel" name="telefono" placeholder="+34 ..." autocomplete="tel"
+               pattern="^[+]?[0-9\s\-]{6,20}$"
+               title="Introduce un teléfono válido (números, espacios, guiones y +)">
+      </div>
+
+      <!-- HONEYPOT — campo invisible que solo rellenan los bots. Si lo rellenan, descartamos. -->
+      <div style="position:absolute;left:-9999px;opacity:0;pointer-events:none" aria-hidden="true">
+        <label>No rellenar (anti-spam)</label>
+        <input type="text" name="website" tabindex="-1" autocomplete="off">
       </div>
 
       <div>
@@ -782,12 +810,13 @@
 </section>
 
 <footer>
-  <img src="amf-logo.png" alt="AMF · Asociación Melide Futbolín" class="footer-logo">
+  <img src="amf-logo.png" alt="AMF · Asociación Melide Futbolín" class="footer-logo" loading="lazy" decoding="async">
   <div class="footer-divider"></div>
   <div class="footer-text">
     <span class="accent">Máster de Melide · Vol. 4</span><br>
     Asociación Melide Futbolín<br>
-    <span class="small">Patrocinado por A Barbería de Iago · © 2026</span>
+    <span class="small">Patrocinado por A Barbería de Iago · © 2026</span><br>
+    <a href="privacidad.html" style="color:var(--ink-dim);text-decoration:underline;font-size:11px;letter-spacing:.15em;margin-top:8px;display:inline-block">Política de Privacidad</a>
   </div>
 </footer>
 
@@ -813,6 +842,7 @@
     <p><strong>Conservación:</strong> mantendremos tus datos hasta seis meses después de la entrega, salvo obligación legal de conservarlos más tiempo.</p>
     <p><strong>Cesión a terceros:</strong> los datos se compartirán únicamente con el fabricante de las camisetas para producir tu pedido.</p>
     <p><strong>Derechos:</strong> puedes acceder, rectificar, suprimir u oponerte al tratamiento de tus datos escribiéndonos por Instagram a <strong>@amfmelide</strong>.</p>
+    <p style="margin-top:18px"><a href="privacidad.html" target="_blank" style="color:var(--accent);text-decoration:underline">Leer política completa →</a></p>
     <button onclick="document.getElementById('privacyModal').classList.remove('show')">Entendido</button>
   </div>
 </div>
@@ -858,8 +888,38 @@
   const SUPABASE_KEY = 'sb_publishable_Gqh04bjVCdIalALPEcFOmw_ywOrvDXs';
   const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
+  // Helpers de validación
+  const isValidEmail = (e) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e);
+  const isValidPhone = (t) => !t || /^[+]?[0-9\s\-]{6,20}$/.test(t.trim());
+  let lastSubmitAt = 0;
+
   document.getElementById('preorderForm').addEventListener('submit', async (e)=>{
     e.preventDefault();
+
+    // 1) ANTI-SPAM: honeypot (bots rellenan campos invisibles)
+    const honeypot = e.target.querySelector('input[name="website"]');
+    if(honeypot && honeypot.value){
+      console.log('Spam bloqueado');
+      document.getElementById('successModal').classList.add('show');
+      return;
+    }
+
+    // 2) Anti doble-envío: bloquea si han pasado <3s desde el último
+    const now = Date.now();
+    if(now - lastSubmitAt < 3000) return;
+
+    // 3) Validaciones del formulario
+    const data = Object.fromEntries(new FormData(e.target));
+
+    if(!data.nombre || data.nombre.trim().length < 2){
+      alert('Por favor, introduce un nombre válido');return;
+    }
+    if(!isValidEmail(data.email)){
+      alert('Por favor, introduce un email válido (ej: tu@email.com)');return;
+    }
+    if(!isValidPhone(data.telefono)){
+      alert('El teléfono no es válido. Usa solo números, espacios, guiones y +');return;
+    }
     if(!document.getElementById('tallaInput').value){
       alert('Por favor, elige una talla');return;
     }
@@ -871,14 +931,14 @@
     const originalText = submitBtn.textContent;
     submitBtn.textContent = 'Enviando...';
     submitBtn.disabled = true;
+    lastSubmitAt = now;
 
-    const data = Object.fromEntries(new FormData(e.target));
     const total = data.cantidad * PRECIO;
 
     const pedido = {
-      nombre: data.nombre,
-      email: data.email,
-      telefono: data.telefono || '',
+      nombre: data.nombre.trim(),
+      email: data.email.trim().toLowerCase(),
+      telefono: (data.telefono || '').trim(),
       talla: data.talla,
       cantidad: parseInt(data.cantidad),
       precio_unitario: PRECIO,
@@ -887,22 +947,25 @@
     };
 
     try {
-      // .select() devuelve el registro insertado con su ID
       const { data: inserted, error } = await sb.from('pedidos_camisetas').insert(pedido).select();
 
       if(!error){
-        // Mostrar número de pedido formateado tipo #047
         const id = inserted && inserted[0] ? inserted[0].id : '—';
         document.getElementById('orderNumber').textContent = '#' + String(id).padStart(3, '0');
         document.getElementById('successModal').classList.add('show');
         e.target.reset();
         qty=1;
         document.getElementById('qtyVal').textContent='1';
+        document.getElementById('qtyInput').value='1';
         document.getElementById('totalDisplay').textContent=PRECIO+'€';
         document.querySelectorAll('.size-btn').forEach(b=>b.classList.remove('active'));
       } else {
         console.error('Error Supabase:', error);
-        alert('Algo no fue bien al guardar tu reserva. Inténtalo de nuevo o escríbenos por Instagram.');
+        if(error.code === '42501' || (error.message || '').includes('policy')){
+          alert('No se pudo guardar la reserva (problema de permisos). Por favor, escríbenos por Instagram.');
+        } else {
+          alert('Algo no fue bien al guardar tu reserva. Inténtalo de nuevo o escríbenos por Instagram.');
+        }
       }
     } catch(err){
       console.error(err);
@@ -1022,5 +1085,16 @@
     setTimeout(()=>toast.classList.remove('show'), 2000);
   }
 </script>
+<!-- ANALÍTICA (Cloudflare Web Analytics — gratis, sin cookies, sin banner)
+     INSTRUCCIONES:
+     1. Ve a https://dash.cloudflare.com/sign-up (gratis)
+     2. Menú izquierdo: Analytics & Logs → Web Analytics
+     3. Pulsa "Add a site" → "Manual setup" → escribe: amfmelide.github.io
+     4. Te darán un script. Pega el TOKEN en la línea de abajo y descomenta:
+-->
+<!--
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "PEGA_AQUI_TU_TOKEN"}'></script>
+-->
+
 </body>
 </html>
