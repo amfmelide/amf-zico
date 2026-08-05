@@ -729,6 +729,9 @@
     <h2 class="section-title">Completa el pedido</h2>
 
     <form id="preorderForm">
+      <div style="background:rgba(31,217,98,.08);border:1px solid rgba(31,217,98,.35);border-radius:12px;padding:14px 16px;margin-bottom:20px;text-align:center;line-height:1.5">
+        <strong style="color:var(--accent)">Reservas cerradas.</strong> No se aceptan más reservas hasta el Máster de Melide.
+      </div>
       <div>
         <label>Nombre completo</label>
         <input type="text" name="nombre" required placeholder="Tu nombre"
@@ -785,7 +788,7 @@
         <span class="total" id="totalDisplay">35€</span>
       </div>
 
-      <button type="submit" class="submit">Reservar ahora →</button>
+      <button type="button" class="submit" onclick="document.getElementById('closedModal').classList.add('show')">Reservas cerradas</button>
 
       <div class="privacy-row">
         <input type="checkbox" id="privacyCheck" required>
@@ -838,6 +841,15 @@
     <div class="order-num" id="orderNumber">AMF-00000</div>
     <p>Apunta tu referencia. Te esperamos el <strong style="color:var(--accent)">18 de septiembre</strong> en el Máster de Melide para entregarte tu camiseta y completar el pago.</p>
     <button onclick="closeModal()">Cerrar</button>
+  </div>
+</div>
+
+<!-- MODAL RESERVAS CERRADAS -->
+<div class="modal" id="closedModal">
+  <div class="modal-content">
+    <h2>Reservas cerradas</h2>
+    <p>Ya no se aceptan más reservas de camiseta. ¡Te esperamos en el <strong style="color:var(--accent)">Máster de Melide</strong>!</p>
+    <button onclick="document.getElementById('closedModal').classList.remove('show')">Cerrar</button>
   </div>
 </div>
 
@@ -905,6 +917,10 @@
 
   document.getElementById('preorderForm').addEventListener('submit', async (e)=>{
     e.preventDefault();
+
+    // RESERVAS CERRADAS — no se aceptan más reservas hasta el Máster de Melide
+    document.getElementById('closedModal').classList.add('show');
+    return;
 
     // 1) ANTI-SPAM: honeypot (bots rellenan campos invisibles)
     const honeypot = e.target.querySelector('input[name="website"]');
