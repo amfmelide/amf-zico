@@ -602,7 +602,7 @@
       </div>
       <div>
         <span class="label">Entrega</span>
-        <span class="value">18 SEP</span>
+        <span class="value">Pendiente</span>
       </div>
       <div>
         <span class="label">Stock</span>
@@ -615,7 +615,7 @@
 
   <div class="shirt-wrap">
     <div class="shirt-bg"></div>
-    <img src="camiseta-nueva-trasera.jpeg" alt="Camiseta oficial Máster de Melide vol.4 - verde y negra" class="shirt-img">
+    <img src="camiseta-nueva-hero.jpeg" alt="Camiseta oficial Máster de Melide vol.4 - verde y negra" class="shirt-img">
     <span class="shirt-tag">VOL.4</span>
     <span class="shirt-caption">Edición oficial 2026 · Polo Zico oversize</span>
   </div>
@@ -627,7 +627,7 @@
     <div class="video-text">
       <div class="eyebrow">Presentación oficial</div>
       <h2>Vive el<br><em>Máster</em></h2>
-      <p>Un primer vistazo a lo que vais a vivir el 18 de septiembre. Reserva tu camiseta y forma parte de la cuarta edición.</p>
+      <p>Un vistazo a la camiseta oficial del Máster de Melide vol.4. Reserva la tuya en la 2ª tanda de pedidos.</p>
     </div>
     <div class="video-frame">
       <video id="presVideo" autoplay muted loop playsinline poster="presentacion-poster.jpg">
@@ -639,17 +639,7 @@
   </div>
 </section>
 
-<!-- CUENTA ATRÁS -->
-<section class="countdown-section">
-  <div class="countdown-label">Faltan para el Máster de Melide</div>
-  <div class="countdown-grid" id="countdown">
-    <div class="countdown-unit"><div class="countdown-num" id="cd-days">00</div><div class="countdown-name">Días</div></div>
-    <div class="countdown-unit"><div class="countdown-num" id="cd-hours">00</div><div class="countdown-name">Horas</div></div>
-    <div class="countdown-unit"><div class="countdown-num" id="cd-mins">00</div><div class="countdown-name">Minutos</div></div>
-    <div class="countdown-unit"><div class="countdown-num" id="cd-secs">00</div><div class="countdown-name">Segundos</div></div>
-  </div>
-  <div class="countdown-date">Viernes 18 de septiembre de 2026</div>
-</section>
+<!-- (Cuenta atrás retirada — 2ª tanda de pedidos) -->
 
 <!-- INFO STRIP -->
 <div class="info-strip">
@@ -662,8 +652,8 @@
     <p>Solo producimos lo reservado. Cero stock sobrante.</p>
   </div>
   <div>
-    <h3>ENTREGA EN EL MÁSTER</h3>
-    <p>Recoge tu camiseta el 18 de septiembre en Melide.</p>
+    <h3>ENTREGA POR CONFIRMAR</h3>
+    <p>Reserva ahora tu talla. Te avisaremos de la fecha de entrega.</p>
   </div>
 </div>
 
@@ -713,7 +703,7 @@
     <span>Detalle · M × Barbería</span>
   </div>
   <div class="gallery-item">
-    <img src="camiseta-nueva-trasera.jpeg" alt="Camiseta Máster de Melide vol.4 completa" loading="lazy" decoding="async">
+    <img src="camiseta-nueva-hero.jpeg" alt="Camiseta Máster de Melide vol.4 completa" loading="lazy" decoding="async">
     <span>Edición oficial 2026</span>
   </div>
 </section>
@@ -729,9 +719,6 @@
     <h2 class="section-title">Completa el pedido</h2>
 
     <form id="preorderForm">
-      <div style="background:rgba(31,217,98,.08);border:1px solid rgba(31,217,98,.35);border-radius:12px;padding:14px 16px;margin-bottom:20px;text-align:center;line-height:1.5">
-        <strong style="color:var(--accent)">Reservas cerradas.</strong> No se aceptan más reservas hasta el Máster de Melide.
-      </div>
       <div>
         <label>Nombre completo</label>
         <input type="text" name="nombre" required placeholder="Tu nombre"
@@ -788,7 +775,7 @@
         <span class="total" id="totalDisplay">35€</span>
       </div>
 
-      <button type="button" class="submit" onclick="document.getElementById('closedModal').classList.add('show')">Reservas cerradas</button>
+      <button type="submit" class="submit">Reservar ahora →</button>
 
       <div class="privacy-row">
         <input type="checkbox" id="privacyCheck" required>
@@ -798,7 +785,7 @@
         </label>
       </div>
 
-      <p class="small">Recibirás una referencia de reserva en pantalla. La camiseta se entrega y se paga el <strong>18 de septiembre en el Máster de Melide</strong>.</p>
+      <p class="small">Recibirás una referencia de reserva en pantalla. Te avisaremos de la <strong>fecha de entrega y del pago</strong> en cuanto esté confirmada.</p>
     </form>
   </div>
 </section>
@@ -839,17 +826,8 @@
     <h2>¡Reserva recibida!</h2>
     <div style="font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:6px">Tu referencia de reserva</div>
     <div class="order-num" id="orderNumber">AMF-00000</div>
-    <p>Apunta tu referencia. Te esperamos el <strong style="color:var(--accent)">18 de septiembre</strong> en el Máster de Melide para entregarte tu camiseta y completar el pago.</p>
+    <p>Apunta tu referencia. Te contactaremos pronto para confirmarte la <strong style="color:var(--accent)">fecha de entrega y el pago</strong> de tu camiseta.</p>
     <button onclick="closeModal()">Cerrar</button>
-  </div>
-</div>
-
-<!-- MODAL RESERVAS CERRADAS -->
-<div class="modal" id="closedModal">
-  <div class="modal-content">
-    <h2>Reservas cerradas</h2>
-    <p>Ya no se aceptan más reservas de camiseta. ¡Te esperamos en el <strong style="color:var(--accent)">Máster de Melide</strong>!</p>
-    <button onclick="document.getElementById('closedModal').classList.remove('show')">Cerrar</button>
   </div>
 </div>
 
@@ -917,10 +895,6 @@
 
   document.getElementById('preorderForm').addEventListener('submit', async (e)=>{
     e.preventDefault();
-
-    // RESERVAS CERRADAS — no se aceptan más reservas hasta el Máster de Melide
-    document.getElementById('closedModal').classList.add('show');
-    return;
 
     // 1) ANTI-SPAM: honeypot (bots rellenan campos invisibles)
     const honeypot = e.target.querySelector('input[name="website"]');
